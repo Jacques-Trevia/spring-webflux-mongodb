@@ -49,4 +49,9 @@ public class PostController {
 		
 	    return service.fullsearch(text, min, max);
 	}
+	
+	@GetMapping(value = "/user/{id}")
+	public Flux<PostDTO> findByUser(@PathVariable String id){
+		return service.findByUser(id);
+	}
 }
